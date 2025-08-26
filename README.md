@@ -20,6 +20,17 @@ openpyxl (for Excel file generation)
 
 PyQt5 (for graphical user interface)
 
+Installation
+
+Clone the repository:
+
+git clone https://github.com/adamabida/project0.git
+
+Install the required Python packages:
+
+pip install -r requirements.txt
+
+
 _How It Works_
 
 Enter the starting date, the number of invoices you want, and the starting invoice number.
