@@ -1,5 +1,5 @@
 **Cake Business Invoice Generator**
-A simple Python tool for generating monthly Excel invoices with auto-filled dates and invoice numbers, created for a small business when I was 16. This was my first-ever project, built with openpyxl and PyQt5.
+A simple Python tool for generating monthly Excel invoices with auto-filled dates and invoice numbers, created for a small business when I was 15. This was my first-ever project, built with openpyxl and PyQt5.
 
 _Features_
 
