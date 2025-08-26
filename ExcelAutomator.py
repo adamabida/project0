@@ -1,8 +1,8 @@
-
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import  QLineEdit
 from openpyxl import load_workbook , Workbook
 import os
+from datetime import datetime
 
 class Ui_MainWindow(object):
 
@@ -349,12 +349,15 @@ class Ui_MainWindow(object):
         annee = self.comboBox_3.currentText()
         
         dir_path = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(dir_path, "facture.xlsx")
+        now = datetime.now()
+        folder_name = now.strftime("%Y-%m-%d_%H-%M-%S")
+        os.makedirs(folder_name, exist_ok=True)  # creates a new folder for the new files 
+        folder_path = os.path.abspath(folder_name)
 
         
-        file_path = os.path.join(dir_path, "facture.xlsx")
-
         for i in range(num_fac_debut, nbre_de_jours + num_fac_debut):
-            path = (r"C:\Users\monthXX")         # the path where the excel files will be saved
+            path = (folder_path)         # the path where the excel files will be saved - you can change it 
             wb = load_workbook(file_path) # the path of the file to be copied
             ws = wb.active
             ws["B10"].value = str(i) + '/'+  str(annee)
@@ -406,5 +409,6 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
 
 
