@@ -349,8 +349,8 @@ class Ui_MainWindow(object):
         annee = self.comboBox_3.currentText()
 
         for i in range(num_fac_debut, nbre_de_jours + num_fac_debut):
-            path = (r"C:\Users\ahmed\Downloads\pyexel")         # the path where the file will be saved
-            wb = load_workbook(r"C:\Users\ahmed\Downloads\pyexel\facture.xlsx") # the path of the file to be copied
+            path = (r"C:\Users\adam\monthXX")         # the path where the excel files will be saved
+            wb = load_workbook(r"C:\Users\adam\path_to_original_file\facture.xlsx") # the path of the file to be copied
             ws = wb.active
             ws["B10"].value = str(i) + '/'+  str(annee)
             if date_du_jour_debut < 10:
@@ -401,3 +401,4 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
