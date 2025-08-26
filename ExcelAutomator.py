@@ -2,7 +2,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import  QLineEdit
 from openpyxl import load_workbook , Workbook
-
+import os
 
 class Ui_MainWindow(object):
 
@@ -347,10 +347,15 @@ class Ui_MainWindow(object):
         date_du_jour_debut = int(self.lineEdit_facdeb_3.text())
         mois = self.comboBox.currentText()
         annee = self.comboBox_3.currentText()
+        
+        dir_path = os.path.dirname(os.path.abspath(__file__))
+
+        
+        file_path = os.path.join(dir_path, "facture.xlsx")
 
         for i in range(num_fac_debut, nbre_de_jours + num_fac_debut):
-            path = (r"C:\Users\adam\monthXX")         # the path where the excel files will be saved
-            wb = load_workbook(r"C:\Users\adam\path_to_original_file\facture.xlsx") # the path of the file to be copied
+            path = (r"C:\Users\monthXX")         # the path where the excel files will be saved
+            wb = load_workbook(file_path) # the path of the file to be copied
             ws = wb.active
             ws["B10"].value = str(i) + '/'+  str(annee)
             if date_du_jour_debut < 10:
@@ -401,4 +406,5 @@ if __name__ == "__main__":
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec_())
+
 
