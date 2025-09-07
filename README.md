@@ -23,13 +23,20 @@ PyQt5 (for graphical user interface)
 Installation
 
 Clone the repository:
+```bash
+
 
 git clone https://github.com/adamabida/project0.git
-
-Install the required Python packages:
-
+```
+Install the requirements 
+```bash
 pip install -r requirements.txt
 
+```
+Install the required Python packages:
+```bash
+pip install -r requirements.txt
+```
 
 _How It Works_
 
